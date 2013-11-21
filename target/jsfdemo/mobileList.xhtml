@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	template="/templates/default.xhtml">
+	
+	<ui:define name="content">
+	
+    <h:form>
+    
+     <h:dataTable value="#{mobileF.allMobile}" var="item"> <!-- petla for -->
+      <f:facet name="header">#{msg.mobileAllShow}</f:facet>
+      
+      <h:column>
+        <f:facet name="header">#{msg.mobileBrandLabel}</f:facet>
+        #{item.model}
+      </h:column>
+
+      
+     </h:dataTable>
+    </h:form>
+      
+	</ui:define>
+	
+</ui:composition>
