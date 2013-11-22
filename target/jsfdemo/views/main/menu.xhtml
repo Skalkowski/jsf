@@ -14,7 +14,22 @@
 		<li>
 		  <h:commandLink action="addMobile?faces-redirect=true">
 			<h:outputText value="#{msg.mobileAdd}" />
-		  </h:commandLink></li>
+		  </h:commandLink>
+		</li>
+		
+		<li>
+		  <h:commandLink action="deleteMobile?faces-redirect=true">
+			 <h:outputText value="#{msg.mobileDelete}" />
+		  </h:commandLink>
+		</li>
+		
+		
+		<li>
+		  <h:commandLink action="searchMobile?faces-redirect=true">
+			 <h:outputText value="#{msg.mobileSearch}" />
+		  </h:commandLink>
+		</li>
+		
 		<li>
 		  <h:commandLink action="mobileList?faces-redirect=true">
 			 <h:outputText value="#{msg.mobileAllLabel}" />

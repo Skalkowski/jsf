@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	template="/templates/default.xhtml">
+	
+	<ui:define name="content">
+	
+    <h:form>
+    
+     <h:dataTable value="#{mobileF.searchedMobile}" var="item"> <!-- petla for -->
+      <f:facet name="header">#{msg.mobileAllShow}</f:facet>
+      
+       <h:column>
+        <f:facet name="header">#{msg.mobileBrandLabel}</f:facet>
+        #{item.brand}
+      </h:column>
+      
+      <h:column>
+        <f:facet name="header">#{msg.mobileModelLabel}</f:facet>
+        #{item.model}
+      </h:column>
+      
+       <h:column>
+        <f:facet name="header">#{msg.mobileRamLabel}</f:facet>
+        #{item.ram}
+      </h:column>
+      
+      <h:column>
+        <f:facet name="header">#{msg.mobileProcessorLabel}</f:facet>
+        #{item.processor}
+      </h:column>
+      
+      <h:column>
+        <f:facet name="header">#{msg.mobileScreenLabel}</f:facet>
+        #{item.screen}
+      </h:column>
+      
+      <h:column>
+        <f:facet name="header">#{msg.mobileTypeLabel}</f:facet>
+        #{item.type}
+      </h:column>
+
+      
+     </h:dataTable>
+    </h:form>
+      
+	</ui:define>
+	
+</ui:composition>

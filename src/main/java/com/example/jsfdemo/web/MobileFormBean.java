@@ -39,6 +39,17 @@ public class MobileFormBean implements Serializable {
         public List<Mobile> getAllMobile() {
                 return mobileMenager.getDb();
         }
+        
+        public String deletedMobile(){
+        	mobileMenager.deleteMobile(mobile);
+        	return "mobileList";
+        }
+        
+        public String searchedMobile(){
+        	mobileMenager.searchMobile(mobile);
+        	return "mobileOneList";
+        }
+       
 
         // Validators
 

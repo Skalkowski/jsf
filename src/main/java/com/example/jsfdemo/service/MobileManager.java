@@ -27,6 +27,31 @@ public class MobileManager {
 	public List<Mobile> getDb() {
 		return db;
 	}
+	
+	public void deleteMobile(Mobile mobile) {
+		for (Mobile e :db){
+			if (e.getModel().equals(mobile.getModel())){
+				db.remove(e);
+			}
+		}
+	}
+	
+	public Mobile searchMobile(Mobile mobile){
+		Mobile model = new Mobile();
+		for (Mobile e : db){
+			if (e.getModel().equals(mobile.getModel())){
+
+				model.setBrand(mobile.getBrand());
+				model.setModel(mobile.getModel());
+				model.setProcessor(mobile.getProcessor());
+				model.setRam(mobile.getRam());
+				model.setScreen(mobile.getScreen());
+				model.setType(mobile.isType());
+				
+			}
+		}
+		return model;
+	}
 
 
 }
