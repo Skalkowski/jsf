@@ -1,8 +1,8 @@
 package com.example.jsfdemo.domain;
 
 public class Mobile {
-	private String brand = "unkown";
-	private String model = "unkown";
+	private String brand;
+	private String model;
 	private int ram;
 	private int processor;
 	private double screen;

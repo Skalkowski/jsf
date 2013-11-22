@@ -8,16 +8,31 @@
 		<h:form id="personform">
 			<h:panelGrid columns="2">
 
-				<h:outputText value="#{msg.mobileModel}" />
-				<h:inputText id="name" value="#{mobileF.mobile.model}" />
-
 				<h:outputText value="#{msg.mobileBrand}" />
 				<h:inputText id="brand" value="#{mobileF.mobile.brand}" />
+
+
+				<h:outputText value="#{msg.mobileModel}" />
+				<h:inputText id="model" value="#{mobileF.mobile.model}" />
+
+				<h:outputText value="#{msg.mobileRam}" />
+				<h:inputText id="ram" value="#{mobileF.mobile.ram}" />
+				
+				<h:outputText value="#{msg.mobileProcessor}" />
+				<h:inputText id="processor" value="#{mobileF.mobile.processor}" />
+				
+				<h:outputText value="#{msg.mobileScreen}" />
+				<h:inputText id="screen" value="#{mobileF.mobile.screen}" />
+				
+				<h:outputText value="#{msg.mobileType}" />
+				<h:inputText id="type" value="#{mobileF.mobile.type}" />
+
+
 			</h:panelGrid>
 
-			<h:commandButton value="#{msg.mobileOKButton}"
+			<h:commandButton value="#{msg.mobileOkButton}"
 				action="#{mobileF.addMobile}" />
-				
+
 			<h:panelGrid>
 				<h:messages showDetail="#{true}" showSummary="#{false}" />
 			</h:panelGrid>
