@@ -32,6 +32,7 @@ public class MobileManager {
 		for (Mobile e :db){
 			if (e.getModel().equals(mobile.getModel())){
 				db.remove(e);
+				break;
 			}
 		}
 	}

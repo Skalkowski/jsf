@@ -5,6 +5,10 @@ import java.io.Serializable;
 import java.util.List;
 
 import javax.enterprise.context.SessionScoped;
+import javax.faces.application.FacesMessage;
+import javax.faces.component.UIComponent;
+import javax.faces.context.FacesContext;
+import javax.faces.validator.ValidatorException;
 import javax.inject.Inject;
 import javax.inject.Named;
 
@@ -49,21 +53,25 @@ public class MobileFormBean implements Serializable {
         	mobileMenager.searchMobile(mobile);
         	return "mobileOneList";
         }
+        
+        public Mobile getoneMobile(){
+        return mobile;
+        }
        
 
         // Validators
 
         // sprawdzanie czy sn jest juz w bazie
- /*       public void serialNumber(FacesContext context, UIComponent component, Object value) {
+        public void model(FacesContext context, UIComponent component, Object value) {
 
-                String serialNumber = (String) value;
+                String modelek = (String) value;
 
-                for (Watch watch : watchMenager.writeAllWatchs()) {
-                        if (watch.getSerialNumber().equalsIgnoreCase(serialNumber)) {
-                                FacesMessage message = new FacesMessage("Watch with this serial number exists in database");
+                for (Mobile mobile : mobileMenager.getDb()) {
+                        if (mobile.getModel().equalsIgnoreCase(modelek)) {
+                                FacesMessage message = new FacesMessage("komorka o danym model juz istnieje");
                                 message.setSeverity(FacesMessage.SEVERITY_ERROR);
                                 throw new ValidatorException(message);
                         }
                 }
-        } */ 
+        }  
 }

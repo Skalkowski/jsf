@@ -1,5 +1,7 @@
 package com.example.jsfdemo.domain;
 
+import javax.validation.constraints.Min;
+
 public class Mobile {
 	private String brand;
 	private String model;
@@ -38,10 +40,12 @@ public class Mobile {
 	public void setModel(String model) {
 		this.model = model;
 	}
-
+	@Min(128)
 	public int getRam() {
 		return ram;
 	}
+	
+	
 
 	public void setRam(int ram) {
 		this.ram = ram;
