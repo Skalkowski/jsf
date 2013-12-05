@@ -19,11 +19,7 @@
 					<f:selectItem itemValue="Lenovo" itemLabel="Lenovo" />
 					<f:selectItem itemValue="Nokia" itemLabel="Nokia" />
 				</rich:select>
-				<!-- <h:inputText id="brand" value="#{mobileF.mobile.brand}" 
-					required="#{true}">
-					<f:ajax execute="@this" render="erorek" />
-		
-				</h:inputText> -->
+				
 
 
 				<h:outputText value="#{msg.mobileModel}" />
@@ -69,12 +65,12 @@
 		<table width="400">
 			<tbody>
 				<tr>
-					<td><span onmouseover="updateName('dupa')"
-						onmouseout="updateName('')">Kate</span></td>
-					<td><span onmouseover="updateName('John')"
-						onmouseout="updateName('')">John</span></td>
-					<td><span onmouseover="updateName('Alex')"
-						onmouseout="updateName('')">Alex</span></td>
+					<td><span onmouseover="updateName('Random Access Memory – pamięć o dostępie swobodnym')"
+						onmouseout="updateName('')">RAM</span></td>
+					<td><span onmouseover="updateName('Central Processing Unit')"
+						onmouseout="updateName('')">Procesor</span></td>
+					<td><span onmouseover="updateName('urządzenie elektroniczne w formie powierzchni służące do wyświetlania informacji')"
+						onmouseout="updateName('')">Ekran</span></td>
 				</tr>
 				<tr>
 					<td colspan="3">Name: <b> <h:outputText id="showname"
@@ -88,15 +84,6 @@
 				<a4j:param name="model" assignTo="#{mobileF.mobile.opis}" />
 			</a4j:jsFunction>
 		</h:form>
-
-
-
-
-
-
-
-
-
 
 	</ui:define>
 </ui:composition>
