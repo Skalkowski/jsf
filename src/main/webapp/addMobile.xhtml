@@ -3,26 +3,40 @@
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:h="http://java.sun.com/jsf/html"
-	template="/templates/default.xhtml">
+	template="/templates/default.xhtml"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:a4j="http://richfaces.org/a4j">
 	<ui:define name="content">
+
 		<h:form id="mobileform">
 			<h:panelGrid columns="2">
 
 				<h:outputText value="#{msg.mobileBrand}" />
-				<h:inputText id="brand" value="#{mobileF.mobile.brand}"
+				<rich:select value="#{mobileF.mobile.brand}">
+					<f:selectItem itemValue="Samsung" itemLabel="Samsung" />
+					<f:selectItem itemValue="Sony" itemLabel="Sony" />
+					<f:selectItem itemValue="LG" itemLabel="LG" />
+					<f:selectItem itemValue="Lenovo" itemLabel="Lenovo" />
+					<f:selectItem itemValue="Nokia" itemLabel="Nokia" />
+				</rich:select>
+				<!-- <h:inputText id="brand" value="#{mobileF.mobile.brand}" 
 					required="#{true}">
 					<f:ajax execute="@this" render="erorek" />
-
-				</h:inputText>
+		
+				</h:inputText> -->
 
 
 				<h:outputText value="#{msg.mobileModel}" />
 				<h:inputText id="model" value="#{mobileF.mobile.model}"
-					validator="#{mobileF.model}" />
-
+					validator="#{mobileF.model}">
+					<f:ajax execute="@this" render="erorek" />
+				</h:inputText>
 				<h:outputText value="#{msg.mobileRam}" />
-				
-				<h:inputText id="ram" value="#{mobileF.mobile.ram}" />
+
+				<h:inputText id="ram" value="#{mobileF.mobile.ram}">
+					<f:ajax execute="@this" render="erorek" />
+				</h:inputText>
+
 
 				<h:outputText value="#{msg.mobileProcessor}" />
 				<h:inputText id="processor" value="#{mobileF.mobile.processor}">
@@ -31,11 +45,13 @@
 				</h:inputText>
 
 				<h:outputText value="#{msg.mobileScreen}" />
-				<h:inputText id="screen" value="#{mobileF.mobile.screen}">
+				<rich:inputNumberSlider value="#{mobileF.mobile.screen}" width="500"
+					maxValue="10" step="0.1" showArrows="true" showTooltip="false">
+
 					<f:validateDoubleRange minimum="2.0" maximum="6.9" />
 					<f:ajax execute="@this" render="erorek" />
-				</h:inputText>
-
+				</rich:inputNumberSlider>
+				
 				<h:outputText value="#{msg.mobileType}" />
 				<h:inputText id="type" value="#{mobileF.mobile.type}" />
 				<h:panelGrid>
@@ -44,10 +60,43 @@
 
 			</h:panelGrid>
 
+
+
 			<h:commandButton value="#{msg.mobileOkButton}"
 				action="#{mobileF.addMobile}" />
-
-
 		</h:form>
+
+		<table width="400">
+			<tbody>
+				<tr>
+					<td><span onmouseover="updateName('dupa')"
+						onmouseout="updateName('')">Kate</span></td>
+					<td><span onmouseover="updateName('John')"
+						onmouseout="updateName('')">John</span></td>
+					<td><span onmouseover="updateName('Alex')"
+						onmouseout="updateName('')">Alex</span></td>
+				</tr>
+				<tr>
+					<td colspan="3">Name: <b> <h:outputText id="showname"
+								value="#{mobileF.mobile.opis}" />
+					</b></td>
+				</tr>
+			</tbody>
+		</table>
+		<h:form>
+			<a4j:jsFunction name="updateName" render="showname">
+				<a4j:param name="model" assignTo="#{mobileF.mobile.opis}" />
+			</a4j:jsFunction>
+		</h:form>
+
+
+
+
+
+
+
+
+
+
 	</ui:define>
 </ui:composition>

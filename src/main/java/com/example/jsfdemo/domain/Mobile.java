@@ -9,6 +9,7 @@ public class Mobile {
 	private int processor;
 	private double screen;
 	private boolean type;
+	private String opis;
 
 	public Mobile() {
 		super();
@@ -23,6 +24,17 @@ public class Mobile {
 		this.processor = processor;
 		this.screen = screen;
 		this.type = type;
+	}
+
+	
+	
+	
+	public String getOpis() {
+		return opis;
+	}
+
+	public void setOpis(String opis) {
+		this.opis = opis;
 	}
 
 	public String getBrand() {

@@ -18,8 +18,8 @@ public class Vali implements Validator{
 		
 		if (proc < 399){
 			FacesMessage message = new FacesMessage();
-			message.setDetail("prosecor miec taktowanie powyzej 399");
-			message.setSummary("prosecor miec taktowanie powyzej 399");
+			message.setDetail("procesor miec taktowanie powyzej 399");
+			message.setSummary("procesor miec taktowanie powyzej 399");
 			message.setSeverity(FacesMessage.SEVERITY_ERROR);
 			throw new ValidatorException(message);
 		}
